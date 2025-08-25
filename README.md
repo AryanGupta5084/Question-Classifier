@@ -1,9 +1,5 @@
 # Question Classifier 🚀  
 
-![CI/CD](https://github.com/AryanGupta5084/question-classifier/actions/workflows/docker-publish.yml/badge.svg)  
-![Docker Pulls](https://img.shields.io/docker/pulls/aryangupta5084/question-classifier)  
-![License](https://img.shields.io/github/license/AryanGupta5084/question-classifier)  
-
 A plug-and-play Python project that classifies questions into **factual**, **opinion**, or **math**.  
 Supports **CLI**, **REST API**, **Docker**, and comes with **CI/CD** for automated builds and publishing.  
 
@@ -84,5 +80,3 @@ docker pull aryangupta5084/question-classifier:latest
 
 ---
 
-## 📜 License  
-MIT License – free to use, modify, and share  
