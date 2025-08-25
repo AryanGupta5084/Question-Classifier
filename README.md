@@ -1,34 +1,62 @@
-# Question Classifier (with API + Docker + CI/CD)
+# Question Classifier 🚀  
 
-A Python project that classifies questions into **factual**, **opinion**, or **math**, with CLI, REST API, Docker, and CI/CD support.
+![CI/CD](https://github.com/AryanGupta5084/question-classifier/actions/workflows/docker-publish.yml/badge.svg)  
+![Docker Pulls](https://img.shields.io/docker/pulls/aryangupta5084/question-classifier)  
+![License](https://img.shields.io/github/license/AryanGupta5084/question-classifier)  
 
-## Features
-- **CLI Mode:** Run interactively from terminal.
-- **API Mode:** Expose endpoints using FastAPI.
-- **Docker Support:** Deploy anywhere easily.
-- **CI/CD:** Automated build & push using GitHub Actions.
+A plug-and-play Python project that classifies questions into **factual**, **opinion**, or **math**.  
+Supports **CLI**, **REST API**, **Docker**, and comes with **CI/CD** for automated builds and publishing.  
 
-## How to Run
+---
+
+## ✨ Features  
+- **CLI Mode:** Run directly from terminal  
+- **API Mode:** REST API using FastAPI  
+- **Dockerized:** Run anywhere with a single command  
+- **CI/CD Ready:** Auto Docker builds via GitHub Actions  
+- **Open Source:** Anyone can clone, run, or extend  
+
+---
+
+## ⚡ Quick Start  
+
+### 🔹 Run with Docker (Recommended)  
 ```bash
-# Clone this repo
-git clone https://github.com/<your-username>/question-classifier.git
+docker pull aryangupta5084/question-classifier:latest
+docker run -d -p 8000:8000 aryangupta5084/question-classifier
+```
+Open 👉 [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)  
+
+---
+
+### 🔹 Run Locally (CLI)  
+```bash
+# Clone repo
+git clone https://github.com/AryanGupta5084/question-classifier.git
 cd question-classifier
 
-# Install requirements
+# Install dependencies
 pip install -r requirements.txt
 
-# Run API
+# Run app
+python main.py
+```
+
+---
+
+### 🔹 Run Locally (API)  
+```bash
 uvicorn main:app --reload
 ```
+Open 👉 [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)  
 
-## Example Usage (API)
+---
+
+## 🔥 Example API Usage  
 ```bash
-curl -X POST "http://127.0.0.1:8000/classify" \\
-     -H "Content-Type: application/json" \\
-     -d '{"text": "2 + 3 * 5"}'
+curl -X POST "http://127.0.0.1:8000/classify" \     -H "Content-Type: application/json" \     -d '{"text": "2 + 3 * 5"}'
 ```
-
-**Response:**
+**Response:**  
 ```json
 {
   "question": "2 + 3 * 5",
@@ -36,31 +64,25 @@ curl -X POST "http://127.0.0.1:8000/classify" \\
 }
 ```
 
-## Run with Docker
-```bash
-# Build image
-docker build -t question-classifier .
+---
 
-# Run container
-docker run -d -p 8000:8000 question-classifier
+## 🤖 CI/CD (GitHub Actions)  
+This repo is CI/CD enabled 🚀  
+- On push to `main`, Docker image is built & pushed to Docker Hub  
+- Anyone can pull the latest image:  
+```bash
+docker pull aryangupta5084/question-classifier:latest
 ```
 
-## CI/CD (GitHub Actions)
-This project includes a workflow to:
-- Build Docker image
-- Push to Docker Hub on new commits to `main`
+---
 
-To use:
-1. Set Docker Hub credentials in repo **Settings → Secrets → Actions**:
-   - `DOCKERHUB_USERNAME`
-   - `DOCKERHUB_TOKEN`
-2. On push to `main`, the image will be auto-built and pushed.
+## 🚀 Future Improvements  
+- LLM-powered classification (OpenAI / Hugging Face)  
+- Wikipedia API for factual answers  
+- SymPy for advanced math solving  
+- Cloud deployment templates (AWS/GCP/Azure)  
 
-## Future Improvements
-- Replace rule-based classification with **LLM API support** (OpenAI, Hugging Face).
-- Integrate **Wikipedia API** for factual answers.
-- Use **SymPy** for advanced math solving.
-- Add **cloud deployment** (AWS/GCP/Azure).
+---
 
-## License
-MIT License
+## 📜 License  
+MIT License – free to use, modify, and share  
